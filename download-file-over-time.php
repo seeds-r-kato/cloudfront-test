@@ -1,11 +1,15 @@
 <?php
-// データを60回、1秒ごとに送信
-// curl https://your-cloudfront-domain.com/download-file-over-time.php -o downloaded_file
-for ($i = 0; $i < 60; $i++) {
-    echo str_repeat("x", 1024 * 10); // 10KBのデータを出力
-    ob_flush();
-    flush();
-    sleep(1);
+// /var/html/uploads/100MB.jpgをダウンロード
+$filePath = "/var/html/uploads/100MB.jpg";
+
+if (!file_exists($filePath)) {
+    die('File not found.');
 }
-echo "Download completed after 60 seconds";
+
+$fileSize = filesize($filePath);
+header('Content-Type: image/jpeg'); 
+header('Content-Length: ' . $fileSize);
+
+readfile($filePath);
+exit;
 ?>
