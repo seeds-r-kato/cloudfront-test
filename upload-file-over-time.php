@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
     } else {
         echo "Failed to move uploaded file";
     }
-    // sleep(65); // アップロード処理に65秒の遅延
 } else {
     echo ("Request method is not POST: " . $_SERVER['REQUEST_METHOD']);
     echo ("Uploaded file: " . $_FILES['file']);
