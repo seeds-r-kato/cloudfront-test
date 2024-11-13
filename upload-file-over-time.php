@@ -10,9 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
     }
     $uploadDir = '/var/www/html/uploads/';
     $uploadFile = $uploadDir . basename($_FILES['file']['name']);
-    move_uploaded_file($_FILES['file']['tmp_name'], $uploadFile);
+    if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadFile)) {
+        echo "Upload completed";
+    } else {
+        echo "Failed to move uploaded file";
+    }
     // sleep(65); // アップロード処理に65秒の遅延
-    echo "Upload completed";
 } else {
     echo ("Request method is not POST: " . $_SERVER['REQUEST_METHOD']);
     echo ("Uploaded file: " . $_FILES['file']);
