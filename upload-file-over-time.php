@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
     echo "Upload completed";
 } else {
     error_log("Request method is not POST: " . $_SERVER['REQUEST_METHOD'], 3, $logFile);
+    echo ("Request method is not POST: " . $_SERVER['REQUEST_METHOD']);
     echo "No file uploaded";
 }
 ?>
