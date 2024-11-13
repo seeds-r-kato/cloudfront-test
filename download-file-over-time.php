@@ -1,6 +1,5 @@
 <?php
-// /var/html/uploads/1GB.jpgをダウンロード
-$filePath = "/var/www/html/uploads/1GB.jpg";
+$filePath = "/var/www/html/uploads/100MB.jpg";
 
 if (!file_exists($filePath)) {
     die('File not found.');
