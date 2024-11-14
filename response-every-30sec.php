@@ -1,6 +1,5 @@
 <?php
 // 出力バッファリングを無効にする設定
-ob_start();
 ini_set('output_buffering', 'off');
 ini_set('zlib.output_compression', false);
 ini_set('implicit_flush', true);
