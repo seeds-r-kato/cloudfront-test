@@ -1,9 +1,12 @@
 <?php
 ob_implicit_flush(true);
+// 出力バッファリングを無効にする
+while (ob_get_level()) {
+    ob_end_clean();
+}
 
 header("Content-Type: text/plain");
-header("Cache-Control: no-cache");
-header("Connection: keep-alive");
+
 
 // 無限ループで30秒ごとにレスポンス
 // 2分経ったらタイムアウト
