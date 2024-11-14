@@ -1,6 +1,6 @@
 <?php
 // 無限ループで30秒ごとにレスポンス
-// 3分経ったらタイムアウト
+// 2分半経ったらタイムアウト
 $time = 0;
 while (true) {
     echo "response at " . $time . " seconds\n";
@@ -8,7 +8,7 @@ while (true) {
     flush();
     sleep(30);
     $time += 30;
-    if ($time > 180) {
+    if ($time > 150) {
         break;
     }
 }
