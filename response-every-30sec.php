@@ -1,11 +1,16 @@
 <?php
-ob_implicit_flush(true);
-// 出力バッファリングを無効にする
+// 出力バッファリングを無効にする設定
+ini_set('output_buffering', 'off');
+ini_set('zlib.output_compression', false);
+ini_set('implicit_flush', true);
+
+// バッファリングを管理するためのレベルをすべて削除
 while (ob_get_level()) {
     ob_end_clean();
 }
 
 header("Content-Type: text/plain");
+header('Cache-Control: no-cache');
 
 
 // 無限ループで30秒ごとにレスポンス
