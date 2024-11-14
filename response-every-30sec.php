@@ -1,4 +1,7 @@
 <?php
+ini_set('implicit_flush', 1);
+ob_implicit_flush(true);
+
 // 無限ループで30秒ごとにレスポンス
 // 2分半経ったらタイムアウト
 $time = 0;
