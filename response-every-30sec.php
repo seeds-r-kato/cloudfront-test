@@ -1,6 +1,9 @@
 <?php
-ini_set('implicit_flush', 1);
 ob_implicit_flush(true);
+
+header("Content-Type: text/plain");
+header("Cache-Control: no-cache");
+header("Connection: keep-alive");
 
 // 無限ループで30秒ごとにレスポンス
 // 2分経ったらタイムアウト
